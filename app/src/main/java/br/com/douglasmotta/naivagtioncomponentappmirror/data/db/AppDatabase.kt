@@ -4,9 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import br.com.douglasmotta.naivagtioncomponentappmirror.data.db.dao.UserDAO
 
 @Database( entities = [UserEntity::class], version = 1 )
 abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun userDAO() : UserDAO
 
     companion object {
         // padrão singleton para previnir a criação de várias instancias do database ao mesmo tempo
